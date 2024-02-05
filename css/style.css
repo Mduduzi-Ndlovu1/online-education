@@ -251,6 +251,12 @@ section:nth-child(even) {
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2rem;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  animation: rotateCarousel 10s infinite ;
 }
 
 .info-container .box {
@@ -264,6 +270,37 @@ section:nth-child(even) {
           align-items: center;
   gap: 1.5rem;
   border: 0.1rem solid #999;
+
+  
+  text-align: center;
+  flex: 0 0 30%;
+  opacity: 0;
+  animation: fadeInOut 8s infinite;
+}
+
+@keyframes rotateCarousel {
+  0% {
+      transform: translateX(-6%);
+  }
+  
+  100% {
+      transform: translateX(-75%);
+  }
+  0% {
+      transform: translateX(-75%);
+  }
+  70% {
+      transform: translateX(-6%);
+  }
+  
+  /* Add more keyframes for additional boxes */
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+      opacity: 1;
+  }
+  
 }
 
 .info-container .box i {
@@ -292,7 +329,7 @@ section:nth-child(even) {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   gap: 2rem;
 }
 
@@ -477,6 +514,7 @@ section:nth-child(even) {
 
 .pricing .box-container .box img {
   height: 20rem;
+  width: auto;
 }
 
 .pricing .box-container .box .amount {
